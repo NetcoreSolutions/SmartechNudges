@@ -23,7 +23,7 @@
  
  */
 
-+ (NSString* _Nullable) getString: (NSString* _Nonnull) key withDefaultValue: (NSString* _Nullable) defaultValue NS_SWIFT_NAME(getString(_:withDefaultValue:));
++ (NSString * _Nullable)getString:(NSString * _Nonnull)key withDefaultValue:(NSString * _Nullable)defaultValue NS_SWIFT_NAME(getString(_:withDefaultValue:));
 
 /*!
  @method
@@ -38,7 +38,7 @@
  
  */
 
-+ (NSNumber* _Nullable) getDouble: (NSString* _Nonnull) key withDefaultValue: (NSNumber* _Nullable) defaultValue NS_SWIFT_NAME(getDouble(_:withDefaultValue:));
++ (NSNumber * _Nullable)getDouble:(NSString * _Nonnull)key withDefaultValue:(NSNumber * _Nullable)defaultValue NS_SWIFT_NAME(getDouble(_:withDefaultValue:));
 
 /*!
  @method
@@ -53,7 +53,7 @@
  
  */
 
-+ (BOOL) getBool: (NSString* _Nonnull) key withDefaultValue: (BOOL) defaultValue NS_SWIFT_NAME(getBool(_:withDefaultValue:));
++ (BOOL)getBool:(NSString * _Nonnull)key withDefaultValue:(BOOL)defaultValue NS_SWIFT_NAME(getBool(_:withDefaultValue:));
 
 /*!
  @method
@@ -68,7 +68,7 @@
  
  */
 
-+ (NSDictionary* _Nullable) getJSON: (NSString* _Nonnull) key withDefaultValue: (NSDictionary* _Nullable) defaultValue NS_SWIFT_NAME(getJSON(_:withDefaultValue:));
++ (NSDictionary * _Nullable)getJSON:(NSString * _Nonnull)key withDefaultValue:(NSDictionary * _Nullable)defaultValue NS_SWIFT_NAME(getJSON(_:withDefaultValue:));
 
 /*!
  @method
@@ -83,7 +83,7 @@
  
  */
 
-+ (NSArray* _Nullable) getList: (NSString* _Nonnull) key withDefaultValue: (NSArray* _Nullable) defaultValue NS_SWIFT_NAME(getList(_:withDefaultValue:));
++ (NSArray * _Nullable)getList:(NSString * _Nonnull)key withDefaultValue:(NSArray * _Nullable)defaultValue NS_SWIFT_NAME(getList(_:withDefaultValue:));
 
 /*!
 @method
@@ -98,7 +98,7 @@ Returns the value for the given JSON Array config.
 
 */
 
-+ (NSArray* _Nullable) getJSONArray: (NSString* _Nonnull) key withDefaultValue: (NSArray* _Nullable) defaultValue NS_SWIFT_NAME(getJSONArray(_:withDefaultValue:));
++ (NSArray * _Nullable)getJSONArray:(NSString * _Nonnull)key withDefaultValue:(NSArray * _Nullable)defaultValue NS_SWIFT_NAME(getJSONArray(_:withDefaultValue:));
 
 /*!
  @method
@@ -113,7 +113,7 @@ Returns the value for the given JSON Array config.
  */
 
 
-+ (NSString* _Nullable) getString: (NSString* _Nonnull) key NS_SWIFT_NAME(getString(_:));
++ (NSString * _Nullable)getString:(NSString * _Nonnull)key NS_SWIFT_NAME(getString(_:));
 
 /*!
  @method
@@ -128,7 +128,7 @@ Returns the value for the given JSON Array config.
  */
 
 
-+ (NSNumber* _Nullable) getDouble: (NSString* _Nonnull) key NS_SWIFT_NAME(getDouble(_:));
++ (NSNumber * _Nullable)getDouble:(NSString * _Nonnull)key NS_SWIFT_NAME(getDouble(_:));
 
 /*!
  @method
@@ -143,7 +143,7 @@ Returns the value for the given JSON Array config.
  */
 
 
-+ (BOOL) getBool: (NSString* _Nonnull) key NS_SWIFT_NAME(getBool(_:));
++ (BOOL)getBool:(NSString * _Nonnull)key NS_SWIFT_NAME(getBool(_:));
 
 /*!
 @method
@@ -157,7 +157,7 @@ Returns the value for the given JSON config.
 
 */
 
-+ (NSDictionary* _Nullable) getJSON: (NSString* _Nonnull) key NS_SWIFT_NAME(getJSON(_:));
++ (NSDictionary * _Nullable)getJSON:(NSString * _Nonnull)key NS_SWIFT_NAME(getJSON(_:));
 
 /*!
 @method
@@ -171,7 +171,7 @@ Returns the value for the given list config.
 
 */
 
-+ (NSArray* _Nullable) getList: (NSString* _Nonnull) key NS_SWIFT_NAME(getList(_:));
++ (NSArray * _Nullable)getList:(NSString * _Nonnull)key NS_SWIFT_NAME(getList(_:));
 
 /*!
 @method
@@ -185,6 +185,6 @@ Returns the value for the given JSON Array config.
 
 */
 
-+ (NSArray* _Nullable) getJSONArray: (NSString* _Nonnull) key NS_SWIFT_NAME(getJSONArray(_:));
++ (NSArray * _Nullable)getJSONArray:(NSString * _Nonnull)key NS_SWIFT_NAME(getJSONArray(_:));
 
 @end

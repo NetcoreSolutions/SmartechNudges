@@ -32,5 +32,6 @@
  
  */
 
-- (void) fireHanselEventwithName: (NSString* _Nonnull) eventName andProperties: (NSDictionary* _Nullable) properties NS_SWIFT_NAME(fireHanselEventwithName(eventName:properties:));
+- (void)fireHanselEventwithName:(NSString * _Nonnull)eventName andProperties:(NSDictionary * _Nullable)properties NS_SWIFT_NAME(fireHanselEventwithName(eventName:properties:));
+
 @end

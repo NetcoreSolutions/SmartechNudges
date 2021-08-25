@@ -10,6 +10,8 @@
 
 @protocol HanselEventsListener;
 
+typedef void (^completionBlock)(NSString * _Nullable eventName, NSString * _Nullable vendor, NSDictionary * _Nullable properties);
+
 @class HanselProperties;
 
 @interface HanselTracker : NSObject
@@ -27,7 +29,7 @@
  
  */
 
-+ (void) registerListener: (id<HanselEventsListener>_Nonnull) listener NS_SWIFT_NAME(registerListener(_:));
++ (void)registerListener:(id <HanselEventsListener> _Nonnull)listener NS_SWIFT_NAME(registerListener(_:));
 
 /*!
  @method
@@ -40,7 +42,7 @@
  
  */
 
-+ (void) deRegisterListener NS_SWIFT_NAME(deRegisterListener());
++ (void)deRegisterListener NS_SWIFT_NAME(deRegisterListener());
 
 /*!
  @method
@@ -59,7 +61,7 @@
  
  */
 
-+ (NSDictionary* _Nonnull) getHanselData: (NSString* _Nonnull) eventName andVendor: (NSString* _Nonnull) vendor withProperties: (NSDictionary*_Nullable) properties NS_SWIFT_NAME(getHanselData(_:vendor:withProperties:)) __deprecated_msg("Please use logEvent method for logging events with Hansel SDK.");
++ (NSDictionary * _Nonnull)getHanselData:(NSString * _Nonnull)eventName andVendor:(NSString * _Nonnull)vendor withProperties:(NSDictionary * _Nullable)properties NS_SWIFT_NAME(getHanselData(_:vendor:withProperties:)) __deprecated_msg("Please use logEvent method for logging events with Hansel SDK.");
 
 /*!
  @method
@@ -75,49 +77,74 @@
  
  */
 
-+ (BOOL) isUsedInMap: (NSString* _Nonnull) event andVendor: (NSString* _Nonnull) vendor withProperties: (NSDictionary* _Nullable) properties NS_SWIFT_NAME(isUsedInMap(_:vendor:withProperties:))  __deprecated_msg("Please use logEvent method for logging events with Hansel SDK.");
++ (BOOL)isUsedInMap:(NSString * _Nonnull)event andVendor:(NSString * _Nonnull)vendor withProperties:(NSDictionary * _Nullable)properties NS_SWIFT_NAME(isUsedInMap(_:vendor:withProperties:))  __deprecated_msg("Please use logEvent method for logging events with Hansel SDK.");
 
 /*
-@abstract
-Log the event and get the Hansel Data for the given event.
+ @abstract
+ Log the event and get the Hansel Data for the given event.
+ 
+ @discussion
+ Call this method to log the event and get the Hansel Data for the given event. Append the data returned by this method to the another properties that you intend to send to your analytics vendor. The appending is optional.
+ 
+ @param eventName   Event to be tracked
+ @param vendor      Vendor for the given event.
+ @param properties  Event properties
+ 
+ @return A dictionary containing the analytics data.
+ 
+ */
 
-@discussion
-Call this method to log the event and get the Hansel Data for the given event. Append the data returned by this method to the another properties that you intend to send to your analytics vendor. The appending is optional.
-
-@param eventName   Event to be tracked
-@param vendor      Vendor for the given event.
-@param properties  Event properties
-
-@return A dictionary containing the analytics data.
-
-*/
-
-+ (NSDictionary* _Nonnull) logEvent: (NSString* _Nonnull) eventName andVendor: (NSString* _Nonnull) vendor withProperties: (NSDictionary* _Nullable) properties NS_SWIFT_NAME(logEvent(_:vendor:withProperties:));
++ (NSDictionary * _Nonnull)logEvent:(NSString * _Nonnull)eventName andVendor:(NSString * _Nonnull)vendor withProperties:(NSDictionary * _Nullable)properties NS_SWIFT_NAME(logEvent(_:vendor:withProperties:));
 
 
 /*
-@abstract
-Handles the event and gets the Hansel Data for the event.
+ @abstract
+ Handles the event and gets the Hansel Data for the event.
+ 
+ @discussion
+ Call this method to log the event and get the Hansel Data
+ for the given event. You may append the data returned by
+ this method to the another properties that you intend to
+ send to your analytics vendor.
+ 
+ @param eventName   Event to be tracked
+ @param vendor      The analytics provider that you use
+ @param properties  Event properties
+ @param shouldFire  Whether an equivalent Hansel event should be fired
+ 
+ @return A dictionary containing the analytics data.
+ 
+ */
 
-@discussion
-Call this method to log the event and get the Hansel Data
-for the given event. You may append the data returned by
-this method to the another properties that you intend to
-send to your analytics vendor.
++ (NSDictionary * _Nonnull)handleEventWithName:(NSString * _Nonnull)eventName
+                                        vendor:(NSString * _Nonnull)vendor
+                                 andProperties:(NSDictionary * _Nullable)properties
+                                    shouldFire:(BOOL)shouldFireEvent;
 
-@param eventName   Event to be tracked
-@param vendor      The analytics provider that you use
-@param properties  Event properties
-@param shouldFire  Whether an equivalent Hansel event should be fired
+/*
+ @abstract
+ Handles the event and gets the Hansel Data for the event.
+ 
+ @discussion
+ Call this method to log the event and get the Hansel Data
+ for the given event. You may append the data returned by
+ this method to the another properties that you intend to
+ send to your analytics vendor.
+ 
+ @param eventName   Event to be tracked
+ @param vendor      The analytics provider that you use
+ @param properties  Event properties
+ @param shouldFire  Whether an equivalent Hansel event should be fired
+ @param completionBlock  Will provide the data back to you.
+ 
+ @return A dictionary containing the analytics data.
+ 
+ */
 
-@return A dictionary containing the analytics data.
-
-*/
-
-+ (NSDictionary * _Nonnull) handleEventWithName: (NSString* _Nonnull) eventName
-                                         vendor: (NSString* _Nonnull) vendor
-                                  andProperties: (NSDictionary* _Nullable) properties
-                                     shouldFire: (BOOL) shouldFireEvent;
++ (void)logEventInBackground:(NSString * _Nonnull)eventName
+                   andVendor:(NSString * _Nullable)vendor
+              withProperties:(NSDictionary * _Nullable)properties
+             completionBlock:(completionBlock)block;
 
 @end
 

@@ -10,7 +10,7 @@
 
 #import <Smartech/HanselProtocol.h>
 
-@interface HanselAdapter : NSObject<HanselProtocol>
+@interface HanselAdapter : NSObject <HanselProtocol>
 
 /**
  @brief This method is for intialiazing the Hansel SDK.
@@ -21,9 +21,9 @@
  @param guid The GUID for app.
  */
 
-- (void) initWithAppId: (NSString*)appId
+- (void)initWithAppId:(NSString *)appId
                 appKey:(NSString *)appKey
-      smartechProtocol:(id<SmartechProtocol>)smartechProtocol
+      smartechProtocol:(id <SmartechProtocol>)smartechProtocol
                andGuid:(NSString *)guid;
 
 @end
