@@ -13,6 +13,16 @@
 #import "HanselActionListener.h"
 
 @interface Hansel : NSObject
+
+typedef NS_ENUM(NSUInteger, HanselLogLevel) {
+    HanselLogLevelVerbose = 1,
+    HanselLogLevelInfo = 2,
+    HanselLogLevelWarn = 3,
+    HanselLogLevelError = 4,
+    HanselLogLevelProd = 5,
+    HanselLogLevelNone = 6
+};
+
 /*!
  @method
  
@@ -26,7 +36,8 @@
  @param appKey  The App Key of this app given on the hansel dashboard.
  
  */
-+ (void) initializeSDKWithAppID: (NSString* _Nonnull) appId andAppKey: (NSString* _Nonnull) appKey NS_SWIFT_NAME(initializeSDK(_:_:));
+
++ (void)initializeSDKWithAppID:(NSString * _Nonnull)appId andAppKey:(NSString * _Nonnull)appKey NS_SWIFT_NAME(initializeSDK(_:_:));
 
 /*!
  @method
@@ -44,7 +55,7 @@
  
  */
 
-+ (BOOL) isPushFromHansel: (NSDictionary* _Nullable) pushPayload NS_SWIFT_NAME(isHanselPush(userInfo:));
++ (BOOL)isPushFromHansel:(NSDictionary * _Nullable)pushPayload NS_SWIFT_NAME(isHanselPush(userInfo:));
 
 /*!
  @method
@@ -57,11 +68,9 @@
  @return true if Hansel handled the push payload (if it was a hansel push)
  false otherwise
  
-*/
+ */
 
-
-+ (BOOL) handlePushPayload: (NSDictionary* _Nullable) pushPayload NS_SWIFT_NAME(handlePushPayload(userInfo:));
-
++ (BOOL)handlePushPayload:(NSDictionary * _Nullable)pushPayload NS_SWIFT_NAME(handlePushPayload(userInfo:));
 
 /*!
  @method
@@ -73,8 +82,7 @@
  
  */
 
-
-+ (void) setNewToken: (NSData* _Nullable) token NS_SWIFT_NAME(setNewToken(_:));
++ (void)setNewToken:(NSData * _Nullable)token NS_SWIFT_NAME(setNewToken(_:));
 
 /*!
  @method
@@ -86,7 +94,7 @@
  
  */
 
-+ (NSDictionary* _Nonnull) getMaps NS_SWIFT_NAME(getMaps());
++ (NSDictionary * _Nonnull)getMaps NS_SWIFT_NAME(getMaps());
 
 /*!
  @method
@@ -98,8 +106,7 @@
  
  */
 
-+ (HanselUser* _Nullable) getUser NS_SWIFT_NAME(getUser());
-
++ (HanselUser * _Nullable)getUser NS_SWIFT_NAME(getUser());
 
 /*!
  @method
@@ -116,7 +123,7 @@
  
  */
 
-+ (void) setHanselSyncStateListener:(id<HanselSyncStateListener> _Nonnull) listener forRequest: (HanselRequestType) requestType NS_SWIFT_NAME(setHanselSyncStateListener(_:forRequest:));
++ (void)setHanselSyncStateListener:(id <HanselSyncStateListener> _Nonnull)listener forRequest:(HanselRequestType)requestType NS_SWIFT_NAME(setHanselSyncStateListener(_:forRequest:));
 
 /*!
  @method
@@ -131,9 +138,7 @@
  
  */
 
-
-+ (void) removeHanselSyncStateListenerForRequest: (HanselRequestType) requestType NS_SWIFT_NAME(removeHanselSyncStateListenerForRequest(_:));
-
++ (void)removeHanselSyncStateListenerForRequest:(HanselRequestType)requestType NS_SWIFT_NAME(removeHanselSyncStateListenerForRequest(_:));
 
 /*!
  @method
@@ -149,8 +154,7 @@
  
  */
 
-+ (void) registerHanselActionListener: (NSString*_Nonnull) action andListener: (id<HanselActionListener>_Nonnull) listener NS_SWIFT_NAME(registerHanselActionListener(action:listener:));
-
++ (void)registerHanselActionListener:(NSString * _Nonnull)action andListener:(id <HanselActionListener> _Nonnull) listener NS_SWIFT_NAME(registerHanselActionListener(action:listener:));
 
 /*!
  @method
@@ -162,8 +166,7 @@
  
  */
 
-+ (void) removeHanselActionListener: (NSString*_Nonnull) action NS_SWIFT_NAME(removeHanselActionListener(action:));
-
++ (void)removeHanselActionListener:(NSString * _Nonnull)action NS_SWIFT_NAME(removeHanselActionListener(action:));
 
 /*!
  @method
@@ -175,8 +178,7 @@
  
  */
 
-+ (void) setAppFont: (NSString* _Nonnull) fontFamily NS_SWIFT_NAME(setAppFont(_:));
-
++ (void)setAppFont:(NSString * _Nonnull)fontFamily NS_SWIFT_NAME(setAppFont(_:));
 
 /*!
  @method
@@ -188,19 +190,17 @@
  
  */
 
-+ (void) setScreen: (NSString* _Nonnull) screenName NS_SWIFT_NAME(setScreen(_:));
-
++ (void)setScreen:(NSString * _Nonnull)screenName NS_SWIFT_NAME(setScreen(_:));
 
 /*!
  @method
  
  @abstract
  UnSets the screen name previsouly set by the set screen method.
-
+ 
  */
 
-+ (void) unSetScreen  NS_SWIFT_NAME(unSetScreen());
-
++ (void)unSetScreen  NS_SWIFT_NAME(unSetScreen());
 
 /*!
  @method
@@ -209,48 +209,66 @@
  Checks if any other nudges are waiting in queue or not.
  
  @return true if there are any nudges waiting in the queue
-
+ 
  */
 
-+ (BOOL) onBackButtonPressed  NS_SWIFT_NAME(onBackButtonPressed());
++ (BOOL)onBackButtonPressed  NS_SWIFT_NAME(onBackButtonPressed());
 
 /*!
-@method
-
-@abstract
-This method will enable the debug logs for the Hansel SDK.
-
-*/
-
-+ (void) enableDebugLogs NS_SWIFT_NAME(enableDebugLogs());
-
-
-/*!
-@method
-
-@abstract
-Set the url for adding a test group device. Hansel SDK authenticates the url and adds the device to test device if the url is valid.
-
-@param url  The url received from opening the link in pairing email.
-
-*/
-
-
-+ (void) setTgUrl: (NSURL* _Nullable) url NS_SWIFT_NAME(setTgUrl(_:));
-
-
-/*!
-@method
-
-@abstract
-Tests if the url is opened for adding a tg device.
-
-@param url  The url received from opening the link in pairing email.
+ @method
  
-@return true if url is created for pairing process.
+ @abstract
+ This method will enable the debug logs for the Hansel SDK.
+ 
+ */
 
-*/
+/**
+ @brief Set the debug logging level
+ 
+ @discussion Set using HanselLogLevel enum values or the corresponding int values.
+ 
+ HanselLogLevelVerbose     - enables all logging.
+ HanselLogLevelInfo        - enables minimal information related to SDK integration.
+ HanselLogLevelWarn        - enables warning information related to SDK integration.
+ HanselLogLevelError       - enables errors information related to SDK integration.
+ HanselLogLevelNone        - turns off all SDK logging.
+ 
+ You can use the below code.
+ 
+ @code
+ [[Smartech sharedInstance] setDebugLevel:HanselLogLevelNone];
+ @endcode
+ 
+ @param level The debug level to set.
+ */
++ (void)setDebugLevel:(HanselLogLevel)level;
 
-+ (BOOL) isHanselUrl: (NSURL* _Nullable) url NS_SWIFT_NAME(isHanselUrl(_:));
++ (void)enableDebugLogs NS_SWIFT_NAME(enableDebugLogs());
+
+/*!
+ @method
+ 
+ @abstract
+ Set the url for adding a test group device. Hansel SDK authenticates the url and adds the device to test device if the url is valid.
+ 
+ @param url  The url received from opening the link in pairing email.
+ 
+ */
+
++ (void)setTgUrl:(NSURL * _Nullable)url NS_SWIFT_NAME(setTgUrl(_:));
+
+/*!
+ @method
+ 
+ @abstract
+ Tests if the url is opened for adding a tg device.
+ 
+ @param url  The url received from opening the link in pairing email.
+ 
+ @return true if url is created for pairing process.
+ 
+ */
+
++ (BOOL)isHanselUrl:(NSURL * _Nullable)url NS_SWIFT_NAME(isHanselUrl(_:));
 
 @end

@@ -15,10 +15,8 @@
  
  @discussion
  Implement this protocol and register the reference with Hansel SDK via registerHanselActionListener method of the Hansel class. Registering this listener will allow to receive actions configured on Hansel Dashboard.
-
+ 
  */
-
-
 
 @protocol HanselActionListener
 
@@ -34,6 +32,6 @@
  
  */
 
-- (void) onActionPerformed: (NSString*) action NS_SWIFT_NAME(onActionPerformed(action:));
+- (void)onActionPerformed:(NSString *)action NS_SWIFT_NAME(onActionPerformed(action:));
 
 @end

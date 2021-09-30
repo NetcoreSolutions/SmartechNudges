@@ -6,6 +6,6 @@
 //  Copyright © 2019 Hansel Software Private Limited. All rights reserved.
 //
 
-typedef NS_ENUM(NSInteger,HanselRequestType) {
+typedef NS_ENUM(NSInteger, HanselRequestType) {
     Configs
 };

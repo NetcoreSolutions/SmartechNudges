@@ -22,9 +22,9 @@
  */
 
 - (void)initWithAppId:(NSString *)appId
-                appKey:(NSString *)appKey
-      smartechProtocol:(id <SmartechProtocol>)smartechProtocol
-               andGuid:(NSString *)guid;
+               appKey:(NSString *)appKey
+     smartechProtocol:(id <SmartechProtocol>)smartechProtocol
+              andGuid:(NSString *)guid;
 
 @end
 

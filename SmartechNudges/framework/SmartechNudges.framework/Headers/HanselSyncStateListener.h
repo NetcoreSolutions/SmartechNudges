@@ -32,6 +32,6 @@
  
  */
 
-- (void) onHanselSynced:(BOOL) state NS_SWIFT_NAME(onHanselSynced(state:));
+- (void)onHanselSynced:(BOOL)state NS_SWIFT_NAME(onHanselSynced(state:));
 
 @end

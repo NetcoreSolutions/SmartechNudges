@@ -86,17 +86,17 @@
 + (NSArray * _Nullable)getList:(NSString * _Nonnull)key withDefaultValue:(NSArray * _Nullable)defaultValue NS_SWIFT_NAME(getList(_:withDefaultValue:));
 
 /*!
-@method
-
-@abstract
-Returns the value for the given JSON Array config.
-
-@param key Config name/Key for which the JSON Array config is required.
-@param defaultValue  Default value that will be returned in case no value exists for the given key.
-
-@return The JSON Array config value for the given key if available. If no config value is available will return the default value.
-
-*/
+ @method
+ 
+ @abstract
+ Returns the value for the given JSON Array config.
+ 
+ @param key Config name/Key for which the JSON Array config is required.
+ @param defaultValue  Default value that will be returned in case no value exists for the given key.
+ 
+ @return The JSON Array config value for the given key if available. If no config value is available will return the default value.
+ 
+ */
 
 + (NSArray * _Nullable)getJSONArray:(NSString * _Nonnull)key withDefaultValue:(NSArray * _Nullable)defaultValue NS_SWIFT_NAME(getJSONArray(_:withDefaultValue:));
 
@@ -146,44 +146,44 @@ Returns the value for the given JSON Array config.
 + (BOOL)getBool:(NSString * _Nonnull)key NS_SWIFT_NAME(getBool(_:));
 
 /*!
-@method
-
-@abstract
-Returns the value for the given JSON config.
-
-@param key Config name/Key for which the JSON config is required.
-
-@return The JSON config value for the given key if available. If no config value is available will return nil.
-
-*/
+ @method
+ 
+ @abstract
+ Returns the value for the given JSON config.
+ 
+ @param key Config name/Key for which the JSON config is required.
+ 
+ @return The JSON config value for the given key if available. If no config value is available will return nil.
+ 
+ */
 
 + (NSDictionary * _Nullable)getJSON:(NSString * _Nonnull)key NS_SWIFT_NAME(getJSON(_:));
 
 /*!
-@method
-
-@abstract
-Returns the value for the given list config.
-
-@param key Config name/Key for which the list config is required.
-
-@return The list config value for the given key if available. If no config value is available will return nil.
-
-*/
+ @method
+ 
+ @abstract
+ Returns the value for the given list config.
+ 
+ @param key Config name/Key for which the list config is required.
+ 
+ @return The list config value for the given key if available. If no config value is available will return nil.
+ 
+ */
 
 + (NSArray * _Nullable)getList:(NSString * _Nonnull)key NS_SWIFT_NAME(getList(_:));
 
 /*!
-@method
-
-@abstract
-Returns the value for the given JSON Array config.
-
-@param key Config name/Key for which the JSON Array config is required.
-
-@return The JSON Array config value for the given key if available. If no config value is available will return nil.
-
-*/
+ @method
+ 
+ @abstract
+ Returns the value for the given JSON Array config.
+ 
+ @param key Config name/Key for which the JSON Array config is required.
+ 
+ @return The JSON Array config value for the given key if available. If no config value is available will return nil.
+ 
+ */
 
 + (NSArray * _Nullable)getJSONArray:(NSString * _Nonnull)key NS_SWIFT_NAME(getJSONArray(_:));
 

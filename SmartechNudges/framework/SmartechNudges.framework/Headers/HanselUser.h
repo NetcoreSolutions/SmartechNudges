@@ -21,8 +21,7 @@
  
  */
 
-
-- (void) putStringAttribute: (NSString* _Nonnull) attribute forKey: (NSString* _Nonnull) key NS_SWIFT_NAME(putAttribute(_:forKey:));
+- (void)putStringAttribute:(NSString * _Nonnull)attribute forKey:(NSString * _Nonnull)key NS_SWIFT_NAME(putAttribute(_:forKey:));
 
 /*!
  @method
@@ -35,7 +34,7 @@
  
  */
 
-- (void) putDoubleAttribute: (double) attribute forKey: (NSString* _Nonnull) key NS_SWIFT_NAME(putAttribute(_:forKey:));
+- (void)putDoubleAttribute:(double)attribute forKey:(NSString * _Nonnull)key NS_SWIFT_NAME(putAttribute(_:forKey:));
 
 /*!
  @method
@@ -48,9 +47,7 @@
  
  */
 
-
-- (void) putBoolAttribute: (BOOL) attribute forKey: (NSString* _Nonnull) key NS_SWIFT_NAME(putAttribute(_:forKey:));
-
+- (void)putBoolAttribute:(BOOL)attribute forKey:(NSString * _Nonnull)key NS_SWIFT_NAME(putAttribute(_:forKey:));
 
 /*!
  @method
@@ -62,7 +59,7 @@
  
  */
 
-- (void) setUserId: (NSString* _Nonnull) userId;
+- (void)setUserId:(NSString * _Nonnull)userId;
 
 /*!
  @method
@@ -72,6 +69,6 @@
  
  */
 
-- (void) clear;
+- (void)clear;
 
 @end
