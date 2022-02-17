@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "SmartechNudges"
-  s.version                   = "8.5.15"
+  s.version                   = "8.5.16"
   s.platforms                 = { :ios => "10.0"}
   s.summary                   = "SmartechNudges is for adding no code nudges in the app."
   s.description               = "SmartechNudges framework powers developers to rapidly experiment and add native iOS nudges without any code."
