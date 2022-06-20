@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIView.h>
 #import "HanselUser.h"
 #import "HanselSyncStateListener.h"
 #import "HanselRequestTypeEnum.h"
@@ -270,5 +271,19 @@ typedef NS_ENUM(NSUInteger, HanselLogLevel) {
  */
 
 + (BOOL)isHanselUrl:(NSURL * _Nullable)url NS_SWIFT_NAME(isHanselUrl(_:));
+
+/*!
+ @method
+ 
+ @abstract
+ Returns the boolean value whether index value is set or not for the given view.
+ 
+ @param index unique value which is set for given view.
+ @param view view  for which the Hansel Index is required.
+ 
+ @return Returns the true if index value is set for the given view else will return false.
+ 
+ */
++ (BOOL)setHanselIndexForView:(UIView * _Nonnull)view withIndex:(NSString * _Nonnull)index;
 
 @end
