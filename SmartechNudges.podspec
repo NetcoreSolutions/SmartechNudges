@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "SmartechNudges"
-  s.version                   = "8.5.27"
+  s.version                   = "8.5.28"
   s.platforms                 = { :ios => "10.0"}
   s.summary                   = "SmartechNudges is for adding no code nudges in the app."
   s.description               = "SmartechNudges framework powers developers to rapidly experiment and add native iOS nudges without any code."
@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.preserve_paths            = "SmartechNudges/**/*"
   s.libraries                 = 'icucore', 'sqlite3'
   s.ios.frameworks            = 'CFNetwork', 'Security'
-  s.dependency                  'Smartech-iOS-SDK', '>=3.1.0' 
+  s.dependency                  'Smartech-iOS-SDK', '>=3.1.13' 
 end
