@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "SmartechNudges"
-  s.version                   = "8.5.28"
+  s.version                   = "8.5.29"
   s.platforms                 = { :ios => "10.0"}
   s.summary                   = "SmartechNudges is for adding no code nudges in the app."
   s.description               = "SmartechNudges framework powers developers to rapidly experiment and add native iOS nudges without any code."
@@ -8,10 +8,8 @@ Pod::Spec.new do |s|
   s.license                   = {"type" => "Commercial", "text" => "See https://netcoresmartech.com/"}
   s.authors                   = {"netcoresmartech" => "sales@netcoresmartech.com"}
   s.documentation_url         = "https://docs.netcoresmartech.com/"
-  s.pod_target_xcconfig       = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.user_target_xcconfig      = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
   s.source                    = { :git => "https://github.com/NetcoreSolutions/SmartechNudges.git", :tag => s.version}
-  s.ios.vendored_frameworks   = 'SmartechNudges/framework/SmartechNudges.framework'
+  s.ios.vendored_frameworks   = 'SmartechNudges/framework/SmartechNudges.xcframework'
   s.resource_bundles          = {'iohanseliOS' => ["SmartechNudges/publickey.der","SmartechNudges/Info.plist","SmartechNudges/**/*.{png}","SmartechNudges/allPublicViews.json}"]}
   s.preserve_paths            = "SmartechNudges/**/*"
   s.libraries                 = 'icucore', 'sqlite3'
