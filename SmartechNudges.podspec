@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
   s.license                   = {"type" => "Commercial", "text" => "See https://netcoresmartech.com/"}
   s.authors                   = {"netcoresmartech" => "sales@netcoresmartech.com"}
   s.documentation_url         = "https://docs.netcoresmartech.com/"
+  s.pod_target_xcconfig       = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig      = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
   s.source                    = { :git => "https://github.com/NetcoreSolutions/SmartechNudges.git", :tag => s.version}
   s.ios.vendored_frameworks   = 'SmartechNudges/framework/SmartechNudges.xcframework'
-  s.resource_bundles          = {'iohanseliOS' => ["SmartechNudges/publickey.der","SmartechNudges/Info.plist","SmartechNudges/**/*.{png}","SmartechNudges/allPublicViews.json}"]}
-  s.preserve_paths            = "SmartechNudges/**/*"
   s.libraries                 = 'icucore', 'sqlite3'
   s.ios.frameworks            = 'CFNetwork', 'Security'
   s.dependency                  'Smartech-iOS-SDK', '>=3.1.13' 
