@@ -12,6 +12,7 @@
 #import "HanselSyncStateListener.h"
 #import "HanselRequestTypeEnum.h"
 #import "HanselActionListener.h"
+#import "HanselDeepLinkListener.h"
 
 @interface Hansel : NSObject
 
@@ -156,6 +157,21 @@ typedef NS_ENUM(NSUInteger, HanselLogLevel) {
  */
 
 + (void)registerHanselActionListener:(NSString * _Nonnull)action andListener:(id <HanselActionListener> _Nonnull) listener NS_SWIFT_NAME(registerHanselActionListener(action:listener:));
+
+/*!
+ @method
+ 
+ @abstract
+ Set the Deeplink listener for receiving call backs with Launch URL from Hansel SDK whenever an action is performed.
+ 
+ @discussion
+ Whenever an action which is configured with launch url on Hansel Dashboard is performed this listener will get a callback. Implement the protocol HanselDeepLinkListener and register an instance of that class with Hansel SDK. You can register one listener for all custom action. We maintain a weak reference to the listener to avoid memory leaks.
+ 
+ @param listener Instance of a class implementing the HanselDeepLinkListener protocol.
+ 
+ */
+
++ (void)registerHanselDeeplinkListener:(id <HanselDeepLinkListener> _Nonnull)listener NS_SWIFT_NAME(registerHanselDeeplinkListener(listener:));
 
 /*!
  @method

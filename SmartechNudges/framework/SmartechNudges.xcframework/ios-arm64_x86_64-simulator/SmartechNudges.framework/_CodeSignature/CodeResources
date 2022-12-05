@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/Hansel-umbrella.h</key>
 		<data>
-		ySwwstgQbZGzqx8/cKq3/JyI6iA=
+		d59HV73WT0zIozp6ypjMwYgpzY4=
 		</data>
 		<key>Headers/Hansel.h</key>
 		<data>
-		gsMyKi5BrA9Y52APmaR8yNvIICw=
+		F/xsmOwxVBRz/D/lZdB2U1VcQ1o=
 		</data>
 		<key>Headers/HanselActionListener.h</key>
 		<data>
@@ -23,6 +23,10 @@
 		<key>Headers/HanselConfigs.h</key>
 		<data>
 		n351SYsUvkziak/iF8ps6shPrbU=
+		</data>
+		<key>Headers/HanselDeepLinkListener.h</key>
+		<data>
+		6xqTcnEH9K1sWzfaxG3Etd56Ue0=
 		</data>
 		<key>Headers/HanselEventsListener.h</key>
 		<data>
@@ -46,7 +50,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qp2Q665kySNiH6ds1CD0GjSSkv0=
+		wriK84yLooiNCBCMmiXL7rs52zY=
 		</data>
 		<key>allPublicViews.json</key>
 		<data>
@@ -191,22 +195,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ySwwstgQbZGzqx8/cKq3/JyI6iA=
+			d59HV73WT0zIozp6ypjMwYgpzY4=
 			</data>
 			<key>hash2</key>
 			<data>
-			u3Cvj0Aekc6vNJnbX0tPdTjmcnVmqbEQyr9Jek/KjtQ=
+			9CMXEux6uG/0c8u8Jwb/7wswxOyimXygYoCOKbGgUlA=
 			</data>
 		</dict>
 		<key>Headers/Hansel.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gsMyKi5BrA9Y52APmaR8yNvIICw=
+			F/xsmOwxVBRz/D/lZdB2U1VcQ1o=
 			</data>
 			<key>hash2</key>
 			<data>
-			Og9A5qq6BVNo32LGTVFD/1kj62Nl5XlByvpklvTB4Xc=
+			SDki4q2SuuAMGBF3tYdJ+HbYzUncO69dYWtTmdnCCS0=
 			</data>
 		</dict>
 		<key>Headers/HanselActionListener.h</key>
@@ -240,6 +244,17 @@
 			<key>hash2</key>
 			<data>
 			HqlilzctZDazZ0ZhQ4LQS3VCbTmDTEwM92pMbDdPA1o=
+			</data>
+		</dict>
+		<key>Headers/HanselDeepLinkListener.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6xqTcnEH9K1sWzfaxG3Etd56Ue0=
+			</data>
+			<key>hash2</key>
+			<data>
+			sw1RKZh0AMPnCVkeN66ewi0DnAk3GnPGh37CrC280aM=
 			</data>
 		</dict>
 		<key>Headers/HanselEventsListener.h</key>
