@@ -14,7 +14,20 @@
 #import "HanselActionListener.h"
 #import "HanselDeepLinkListener.h"
 
-@interface Hansel : NSObject
+@protocol HanselFlutterPluginProtocol <NSObject>
+
+@required
+
+- (void)initiateScreenCapturing:(NSString *_Nonnull)appVersion screenName:(NSString *_Nonnull)screenName withClassName:(NSString *_Nonnull)className completionHandler:(void (^_Nonnull)(NSDictionary * _Nonnull result))completionHandler;
+
+- (void)findAnchorWidget:(NSDictionary *_Nonnull)data completionHandler:(void (^_Nonnull)(NSDictionary * _Nullable result))completionHandler;
+- (void)onAnchorWidgetPositionChange:(NSDictionary *_Nonnull)data;
+- (void)startWidgetTracking:(NSDictionary *_Nonnull)data completionHandler:(void (^_Nonnull)(NSDictionary * _Nonnull result))completionHandler;
+- (void)stopWidgetTracking:(NSDictionary *_Nonnull)data completionHandler:(void (^_Nonnull)(NSDictionary * _Nonnull result))completionHandler;
+
+@end
+
+@interface Hansel : NSObject 
 
 typedef NS_ENUM(NSUInteger, HanselLogLevel) {
     HanselLogLevelVerbose = 1,
@@ -301,5 +314,20 @@ typedef NS_ENUM(NSUInteger, HanselLogLevel) {
  
  */
 + (BOOL)setHanselIndexForView:(UIView * _Nonnull)view withIndex:(NSString * _Nonnull)index;
+
+
++ (void)startScreenCapturing:(NSString *_Nonnull)appVersion screenName:(NSString *_Nonnull)screenName withClassName:(NSString *_Nonnull)className success:(void (^_Nonnull)(NSDictionary * _Nonnull result)) success;
+
++ (void)findAnchorWidget:(NSDictionary *_Nonnull)data completionHandler:(void (^_Nonnull)(NSDictionary * _Nonnull result))completionHandler;
+
++ (void)onAnchorWidgetPositionChange:(NSDictionary *_Nonnull)data;
+
++ (void)startWidgetTracking:(NSDictionary *_Nonnull)data;
+
++ (void)stopWidgetTracking:(NSDictionary *_Nonnull)data;
+
++ (void)setFlutterDelegate:(id _Nullable )flutterDelegate;
+
++ (id _Nullable )getFlutterDelegate;
 
 @end

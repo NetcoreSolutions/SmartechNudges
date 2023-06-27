@@ -29,7 +29,7 @@
  Receive sync state from Hansel SDK.
  
  @param state  True if the sync is successful and false if the sync failed.
- 
+ Hansel-umbrella.h>
  */
 
 - (void)onHanselSynced:(BOOL)state NS_SWIFT_NAME(onHanselSynced(state:));
