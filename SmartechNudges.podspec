@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks   = 'SmartechNudges/framework/SmartechNudges.xcframework'
   s.libraries                 = 'icucore', 'sqlite3', 'z'
   s.ios.frameworks            = 'CFNetwork', 'Security'
-  s.dependency                  'Smartech-iOS-SDK', '>=3.5.3'
+  s.dependency                  'Smartech-iOS-SDK', '>=3.5.6'
 end
