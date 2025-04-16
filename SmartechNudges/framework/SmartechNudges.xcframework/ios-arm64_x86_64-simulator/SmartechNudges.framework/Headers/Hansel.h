@@ -330,4 +330,6 @@ typedef NS_ENUM(NSUInteger, HanselLogLevel) {
 
 + (id _Nullable )getFlutterDelegate;
 
++ (void)onAnchorWidgetSuccess:(NSDictionary *_Nonnull)data;
+
 @end
