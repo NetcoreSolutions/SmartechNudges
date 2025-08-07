@@ -187,4 +187,10 @@
 
 + (NSArray * _Nullable)getJSONArray:(NSString * _Nonnull)key NS_SWIFT_NAME(getJSONArray(_:));
 
+/// Set to YES to disable SDK initialization. Default is NO.
++ (void)setHanselSDKDisabled:(BOOL)disable;
+
++ (BOOL)isHanselSDKDisabled;
+
+
 @end
