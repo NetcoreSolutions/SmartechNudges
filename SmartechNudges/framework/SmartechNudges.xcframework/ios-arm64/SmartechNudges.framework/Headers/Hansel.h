@@ -35,7 +35,8 @@ typedef NS_ENUM(NSUInteger, HanselLogLevel) {
     HanselLogLevelWarn = 3,
     HanselLogLevelError = 4,
     HanselLogLevelProd = 5,
-    HanselLogLevelNone = 6
+    HanselLogLevelNone = 6,
+    HanselLogLevelSystem = 7
 };
 
 /*!
