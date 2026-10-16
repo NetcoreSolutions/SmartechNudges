@@ -5,3 +5,8 @@ framework module SmartechNudges {
   
   module * { export * }
 }
+
+module SmartechNudges.Swift {
+  header "SmartechNudges-Swift.h"
+  requires objc
+}

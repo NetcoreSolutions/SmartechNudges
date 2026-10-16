@@ -316,6 +316,44 @@ typedef NS_ENUM(NSUInteger, HanselLogLevel) {
  */
 + (BOOL)setHanselIndexForView:(UIView * _Nonnull)view withIndex:(NSString * _Nonnull)index;
 
+/*!
+ @method
+
+ @abstract
+ Returns a transparent, non interactive view that carries the given Hansel index.
+
+ @discussion
+ Use this where a UIView reference is not available, for example SwiftUI. Embed the returned view
+ through a UIViewRepresentable in the background of the view that should act as the nudge anchor.
+ The marker adopts the frame of the view it is attached to and is registered for the lifetime of
+ its window attachment.
+
+ @param index unique value which identifies the anchor.
+
+ @return A view registered against the given index.
+
+ */
++ (UIView * _Nonnull)markerViewWithIndex:(NSString * _Nonnull)index NS_SWIFT_NAME(markerView(withIndex:));
+
+/*!
+ @method
+
+ @abstract
+ Re-points a marker view returned by markerViewWithIndex: at a different index.
+
+ @discussion
+ SwiftUI reuses the backing view of a UIViewRepresentable when a recycled row shows different
+ data, so the marker must be told about the new index. Call this from updateUIView. Passing a
+ view that is not a Hansel marker does nothing.
+
+ @param view the marker view previously obtained from markerViewWithIndex:.
+ @param index the new unique value which identifies the anchor.
+
+ @return YES when the marker was updated.
+
+ */
++ (BOOL)updateMarkerView:(UIView * _Nonnull)view withIndex:(NSString * _Nonnull)index NS_SWIFT_NAME(updateMarkerView(_:withIndex:));
+
 
 + (void)startScreenCapturing:(NSString *_Nonnull)appVersion screenName:(NSString *_Nonnull)screenName withClassName:(NSString *_Nonnull)className success:(void (^_Nonnull)(NSDictionary * _Nonnull result)) success;
 
